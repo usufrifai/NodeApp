@@ -1,14 +1,24 @@
-<body>Node Made by
+
+<script src="/scripts/jquery.js"/>
+<script type="text/javascript" src="/scripts/angular.js"/>
+<script src="app.js"/>
+<script src="/src/indexcontroller.js"/>
+<script src="/src/indexService.js"/>
+
+<body ng-app="app">Node Made by
 <script  src="bundle.js"></script>
+{{4+5}}
 <table>
 <tr>
   <td >
-<p><h3>usuf<h3></p>
+<p><h2><h2></p>
   </td>
   <td></td>
-  <td><p><h3>fahma<h3></p></td>
+  <td><p><h3>usuf<h3></p></td>
 </tr>
 </table>
 
-
+<ul ng-controller="user as vm.users">
+<li>{{user.id}} - {{user.firtName}}</li>
+</ul>
 </body>

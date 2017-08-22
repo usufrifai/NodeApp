@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "description": "My Node Project",
   "scripts": {
-   "prestart":"babel-node buildScript/startMessage.js",
-   "start": "npm-run-all --parallel security-check open:src lint-watch test-watch",
-   "open:src":"babel-node buildScript/srcServer.js",
-  "lint":"esw webpack.config.* src buildScripts --color",
-  "lint-watch":"npm run lint -- --watch",
-   "security-check" :"nsp check",
-"localtunnel":"lt --port 3000",
-   "share":"npm-run-all --parallel open:src localtunnel",
-"test":"mocha --reporter progress buildScript/testSetup.js \"src/**/*.test.js\"",
-"test-watch":"npm run test -- --watch"
+    "prestart": "babel-node buildScript/startMessage.js",
+    "start": "npm-run-all --parallel security-check open:src lint-watch test-watch",
+    "open:src": "babel-node buildScript/srcServer.js",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint-watch": "npm run lint -- --watch",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "test": "mocha --reporter progress buildScript/testSetup.js \"src/**/*.test.js\"",
+    "test-watch": "npm run test -- --watch"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "angular": "^1.6.6",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
