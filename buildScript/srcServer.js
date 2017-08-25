@@ -8,12 +8,12 @@ const port = 3000;
 const app =  express();
 const compiler = webpack(config);
 
-app.use(express.static('src'));
+app.use('/static',express.static(__dirname + 'src'));
 
-app.use(require('webpack-dev-middleware')(compiler,{
-noInfo:false,
-publicPath : config.output.publicPath
-}));
+//app.use(require('webpack-dev-middleware')(compiler,{
+//noInfo:false,
+//publicPath : config.output.publicPath
+//}));
 
 app.get('/' , function(req ,res){
 res.sendFile(path.join(__dirname ,'../src/index.html' ));
