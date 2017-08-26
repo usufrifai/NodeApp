@@ -4,7 +4,11 @@
     <title></title>
   <meta charset="utf-8" />
 <!--<script src="bundle.js"/>-->
-<script src="/controller/indexcontroller.js"></script>
+<script src="static/libs/jquery.js"></script>
+<script src="static/libs/angular.js"></script>
+<script src="static/app.js"></script>
+<script src="static/controller/indexcontroller.js"></script>
+<script src="static/service/indexService.js"></script>
 
 
 </head>
@@ -21,8 +25,8 @@
 </tr>
 </table>
 
-<ul ng-controller="user as vm.users">
-<li>{{user.id}} - {{user.firtName}}</li>
+<ul ng-controller="indexController as vm">
+<li ng-repeat="user in vm.users">{{user.id}} - {{user.firtName}}</li>
 </ul>
 
 

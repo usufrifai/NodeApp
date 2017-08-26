@@ -1,11 +1,11 @@
 (function(){
 angular.module('app')
-.controller('indexController',['userService',indexController]);
+.controller('indexController',['userServcie',indexController]);
 
-function indexController(userService){
+function indexController(userServcie){
 var vm = this;
 vm.tittle='usuf';
-userService.getAllUsers()
+userServcie.getAllUsers()
 .then(userServiceSuccess,null , notification)
 .catch(userServiceError)
 .finally(userServiceComplete);

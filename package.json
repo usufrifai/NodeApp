@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "babel-node buildScript/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src lint-watch test-watch",
+
     "open:src": "babel-node buildScript/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint-watch": "npm run lint -- --watch",

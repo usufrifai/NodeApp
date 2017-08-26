@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module()
+  angular.module("app")
    .factory("userServcie" , ['$q' , '$http' , userService]);
 
    function userService($q ,$http){
@@ -10,27 +10,13 @@
    }
 
 function getAllUsers(){
-    var deffered = $q.defer();
+var deferred = $q.defer();
 $http({
 method :'GET',
 url:'http://localhost:3000/users'
 }).then(onSuccess , Onerror , onNotify)
 
-function Onerror(reason){
-onNotify(' problme in fetching user');
-deffered.reject(reason);
-}
+return deferred.promise;
 
-function onSuccess (result){
-onNotify('fetching user');
-deffered.resolve(result);
-onNotify('user fetched');
-}
-
- function onNotify (notification){
- deffered.notify(notification);
- }
-
-return deffered.promise;
 }
 })();
